@@ -7,113 +7,158 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Header Section -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="#home" class="tab-link active">Home</a></li>
-                <li><a href="#about" class="tab-link">About Me</a></li>
-                <li><a href="#projects" class="tab-link">Projects</a></li>
-                <li><a href="#experience" class="tab-link">Experience</a></li>
-                <li><a href="#education" class="tab-link">Education</a></li>
-                <li><a href="#contact" class="tab-link">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <div class="header-left">
+                <h1>Andrew Dickey</h1>
+            </div>
+            <div class="header-right">
+                <nav>
+                    <ul id="nav-menu">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="hamburger-menu" id="hamburger-menu">
+                    &#9776; <!-- Unicode character for the hamburger icon -->
+                </div>
+            </div>
+        </div>
     </header>
-    
-    <main>
-        <section id="home" class="tab-content active">
-            <h1>Andrew Dickey</h1>
-            <p>Software Engineer</p>
-        </section>
-        
-        <section id="about" class="tab-content">
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-left">
+                <h2>Hi, I'm Andrew Dickey</h2>
+                <p id="animated-text"></p> <!-- This will hold the animated text -->
+                <p>Random text</p>
+            </div>
+            <div class="hero-right">
+                <p>Placeholder Content</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
             <h2>About Me</h2>
-            <p>I am a passionate software engineer with a Master's degree in Computer Science...</p>
-            <h3>Skills</h3>
-            <ul>
-                <li>Programming Languages: Python, Go, JavaScript</li>
-                <li>Web Development: HTML, CSS, React</li>
-                <li>Databases: SQL, MongoDB</li>
-                <li>Tools: Git, Docker, Kubernetes</li>
-            </ul>
-        </section>
-        
-        <section id="projects" class="tab-content">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>Snake Game</h3>
-                <p>Developed a classic Snake game using Python and Pygame...</p>
-                <a href="https://github.com/yourusername/snake-game" target="_blank">View on GitHub</a>
-            </div>
-            <div class="project">
-                <h3>Email Automation</h3>
-                <p>Built an email automation system using Python's smtplib library...</p>
-                <a href="https://github.com/yourusername/email-automation" target="_blank">View on GitHub</a>
-            </div>
-            <div class="project">
-                <h3>Double Linked List Implementation</h3>
-                <p>Implemented a double linked list in Python...</p>
-                <a href="https://github.com/yourusername/double-linked-list" target="_blank">View on GitHub</a>
-            </div>
-        </section>
-        
-        <section id="experience" class="tab-content">
-            <h2>Experience</h2>
-            <div class="experience">
-                <h3>Software Engineer Intern, ABC Tech</h3>
-                <p>June 2023 - August 2023</p>
-                <ul>
-                    <li>Developed and optimized backend services using Python and Flask...</li>
-                    <li>Collaborated with the front-end team to integrate RESTful APIs...</li>
-                    <li>Improved database performance by 20% through query optimization...</li>
-                </ul>
-            </div>
-            <div class="experience">
-                <h3>Teaching Assistant, University XYZ</h3>
-                <p>September 2022 - May 2023</p>
-                <ul>
-                    <li>Assisted in teaching data structures and algorithms courses...</li>
-                    <li>Conducted lab sessions and helped students with coding assignments...</li>
-                    <li>Contributed to the development of course materials...</li>
-                </ul>
-            </div>
-        </section>
-        
-        <section id="education" class="tab-content">
-            <h2>Education</h2>
-            <div class="education">
-                <h3>Master's Degree in Computer Science</h3>
-                <p>Texas A&M University - Commerce, 2024 (3.88 GPA)</p>
-                <p>Relevant Courses: Data Structures, Operating Systems, Architecture, Networking 1 and 2,
-                    Algorithm design, Artificial Intelligence, Information Security, Research Lit & Techniques, and more.
-                </p>
-            </div>
-            <div class="education">
-                <h3>Bachelor's Degree in Business Analytics</h3>
-                <p>Texas A&M University - Commerce, 2020 (3.66 GPA)</p>
-                <p>Relevant Courses: Accounting 1 & 2, Marketing, Statistics, Data & Info Management, Operations management,
-                    IS Security, Data Mining, Business Analytics Modeling, International Marketing, Project Management, 
-                    Business Analytics Programming, Marketing Research, Database Management, Statistical Methods, and more.
-                </p>
-            </div>
-        </section>
-        
-        <section id="contact" class="tab-content">
-            <h2>Contact</h2>
-            <p>Feel free to reach out to me through any of the following platforms:</p>
-            <ul>
-                <li>Email: <a href="mailto:Andrewpd99@hotmail.com">Andrewpd99@hotmail.com</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/andrew-dickey-link/" target="_blank" >Linkedin.com/in/andrew-dickey-link/</a></li>
-                <li>GitHub: <a href="https://github.com/Andrewpd99" target="_blank">Github.com/Andrewpd99</a></li>
-            </ul>
-        </section>
-        
-    </main>
+            <h1>Software Engineer</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Proin volutpat vulputate elit sit amet laoreet. Vivamus at metus 
+                euismod, tincidunt nisl id, tincidunt nulla. Morbi varius 
+                consectetur tempus. Aliquam iaculis malesuada orci, vel 
+                fermentum erat posuere non. Nam vehicula lorem quam, sed pretium 
+                lacus tincidunt mollis. Mauris euismod leo vitae enim lacinia 
+                condimentum ut at tellus. Praesent varius commodo mi vitae ultrices.
+
+                Etiam faucibus ullamcorper ex sit amet vestibulum. Sed 
+                imperdiet interdum posuere. Suspendisse imperdiet felis 
+                mi, id finibus elit elementum id. Orci varius natoque 
+                penatibus et magnis dis parturient montes, nascetur ridiculus 
+                mus. Vestibulum a urna eu lacus dapibus semper. Sed pulvinar 
+                imperdiet velit, sed cursus ex rhoncus non. Cras tempus feugiat 
+                hendrerit. Donec at placerat tortor. Duis consectetur porta 
+                luctus. Maecenas consequat vitae urna non consectetur. Fusce 
+                convallis nisi ligula, nec suscipit orci accumsan sit amet. 
+                Cras ac massa condimentum, sodales nulla eu, tincidunt lorem.
+            </p>
+        </div>
+    </section>
     
+
+    <!-- Skills Section-->
+    <section id="skills">
+        <h2>Technology Skills</h2>
+        <div class="skills-container">
+            <div class="skills-grid">
+                <div class="skill">
+                    <img src="Pictures/Language_icons/Python.PNG" alt="Python Icon">
+                    <h3>Python</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level python"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <img src="Pictures/Language_icons/HTML.PNG" alt="HTML Icon">
+                    <h3>HTML</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level html"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <img src="Pictures/Language_icons/CSS.png" alt="CSS Icon">
+                    <h3>CSS</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level css"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <img src="Pictures/Language_icons/JavaScript.PNG" alt="JavaScript Icon">
+                    <h3>JavaScript</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level javascript"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project">
+                    <h3>Project 1</h3>
+                    <p>Project description goes here.</p>
+                    <a href="#">View Project</a>
+                </div>
+                <div class="project">
+                    <h3>Project 2</h3>
+                    <p>Project description goes here.</p>
+                    <a href="#">View Project</a>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Andrew Dickey. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 Andrew Dickey. All rights reserved.</p>
+        </div>
     </footer>
 
+
+    <!-- JavaScript File -->
     <script src="scripts.js"></script>
 </body>
 </html>

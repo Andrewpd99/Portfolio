@@ -1,125 +1,476 @@
-/* General styles */
-body {
-    font-family: Arial, sans-serif;
+/* General Styles */
+body, h1, h2, h3, p, ul, li, form, input, textarea, button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
 }
 
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* Header Styles */
 header {
-    background-color: #333;
-    color: white;
-    padding: 1em 0;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 1em;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-nav ul li a.active {
-    font-weight: bold;
-    border-bottom: 2px solid white;
-}
-
-main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2em;
-    flex-direction: column;
-    max-width: 800px;
-    margin: auto;
-}
-
-.tab-content {
-    display: none;
-}
-
-.tab-content.active {
-    display: block;
-}
-
-h1, h2, h3 {
-    color: #333;
-}
-
-footer {
-    background-color: #333;
-    color: white;
+    background-color: #1f1f1f;
+    padding: 20px 0;
     text-align: center;
-    padding: 1em 0;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    z-index: 10; /* Ensure header stays on top */
 }
 
-.project, .experience, .education {
-    margin-bottom: 2em;
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%; /* Allow the container to span the full width */
+    margin: 0 auto;
+    padding: 0 20px; /* Add padding to create space from the edges */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
-#contact {
-    padding: 3em 2em;
-    background-color: #f4f4f4;
-    margin-bottom: 4em;
+.header-left {
+    flex: 1;
+    text-align: left; /* Align the name to the left */
+    padding-left: 3%; /* Move the name more to the left */
 }
 
-#contact p {
-    margin-bottom: 1.5em;
+.header-right {
+    text-align: right; /* Align the navigation to the right */
+    padding-right: 3%; /* Move the navigation more to the right */
 }
 
-#contact ul {
+.header-left h1 {
+    color: #00ff99;
+    margin: 0;
+    font-size: 2em;
+}
+
+.header-right nav ul {
     list-style: none;
+    display: flex;
+    margin: 0 5%;
     padding: 0;
 }
 
-#contact ul li {
-    margin-bottom: 1em;
+.header-right nav ul li {
+    margin: 0 15px;
 }
 
-
-#contact a {
-    color: blue /* Override the visited link color */
+.header-right nav ul li a {
+    color: #00ff99;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-#contact a:visited {
-    color: purple /* Override the visited link color */
+.header-right nav ul li a:hover {
+    Color: #e0e0e0;
 }
 
-#contact a:hover {
-    color: darkblue
+/* Hide nav menu by default on smaller screens */
+#nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #1f1f1f;
+    position: absolute;
+    right: 3%;
+    top: 60px;
+    width: 200px;
+    border-radius: 5px;
+    padding: 10px 0;
 }
 
+#nav-menu li {
+    text-align: center;
+    margin: 10px 0;
+}
 
+/* Hamburger Menu Styling */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 24px; /* Increase the size of the icon */
+    color: #00ff99; /* Set the icon color */
+    padding: 10px; /* Add some padding around the icon */
+    background-color: #1f1f1f; /* Background color to match the header */
+    border-radius: 5px; /* Rounded corners for a nicer look */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
 
+.hamburger-menu:hover {
+    background-color: #333; /* Slightly darker background on hover */
+    color: #fff; /* Change icon color on hover */
+}
 
-
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
+/* Mobile Adjustments */
+@media (max-width: 780px) {
+    .hamburger-menu {
+        display: block;
+        margin: -5px 0px;
     }
 
-    nav ul li {
-        margin: 0.5em 0;
+    /* Navigation menu shown in dropdown when hamburger is clicked */
+    #nav-menu.show {
+        display: flex;
+        border: 2px solid #00ff99;
+
+    }
+
+    /* Ensure that the regular horizontal nav is hidden on smaller screens */
+    #nav-menu {
+        display: none;
+    }
+
+    /* Change text color on hover */
+    #nav-menu.show li:hover a {
+        color: #e0e0e0;
+    }
+}
+
+/* Regular header for larger screens */
+@media (min-width: 781px) {
+    #nav-menu {
+        display: flex; /* Regular horizontal menu on larger screens */
+        position: static; /* Reset position */
+        width: auto; /* Reset width */
+        background-color: transparent; /* No background on larger screens */
+        padding: 0; /* Reset padding */
+        flex-direction: row; /* Horizontal layout */
+    }
+
+    #nav-menu li {
+        margin: 0 15px; /* Regular margin between items */
+    }
+
+    .hamburger-menu {
+        display: none; /* Hide hamburger menu on larger screens */
+    }
+}
+
+/* Hero Section Styles */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    background: linear-gradient(135deg, #1f1f1f, #000);
+    flex-wrap: wrap;
+    text-align: left;
+    position: relative;
+    overflow: hidden; /* Ensures the stars stay within the hero section */
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+    max-width: 1100px;
+    margin: 5% auto;
+    padding: 0 40px; /* Add padding to create space from the edges */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    position: relative; /* Position relative for the container */
+}
+
+/* Default layout (larger screens) */
+.hero-left {
+    flex: 1; /* Take up available space */
+    margin-right: 20px; /* Space between hero-left and hero-right */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+}
+
+.hero-left h2 {
+    font-size: 1.75em;
+    margin-bottom: -22px; /* Increase the bottom margin */
+}
+
+/* Hero Right Placeholder */
+.hero-right {
+    background-color: #ffffff; /* White background */
+    width: 600px; /* Fixed width on larger screens */
+    height: 350px; /* Fixed height on larger screens */
+    border: 2px solid #cccccc; /* Light border for visibility */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333; /* Dark text color */
+    font-size: 24px; /* Text size */
+    text-align: center; /* Center the text */
+    z-index: 1; /* Ensure it's above other elements */
+    position: relative; /* Ensure it's positioned correctly */
+}
+
+/* Responsive Styles */
+@media (max-width: 1100px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-container {
+        justify-content: center; /* Center the container items horizontally */
+        align-items: center; /* Center the container items vertically */
+    }
+
+    .hero-left, .hero-right {
+        width: 100%; /* Full width on smaller screens */
+        margin-bottom: 20px; /* Space below each section */
+    }
+
+    .hero-left {
+        order: 1; /* Ensure hero-left comes first */
+    }
+
+    .hero-right {
+        order: 2; /* Ensure hero-right comes second */
+    }
+}
+
+#animated-text {
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    color: #e0e0e0;
+    font-size: 20px;
+    margin-top: 10px; /* Add some top margin */
+}
+
+#animated-text .highlight {
+    font-size: 24px; /* Bigger font size for changing text */
+    color: #00ff99; /* Text color #00ff99 for changing text */
+    font-family: Arial, sans-serif;
+    border-right: 2px solid #00ff99; /* Create the blinking cursor */
+    padding-right: 2px; /* Adjust spacing for the cursor */
+    animation: blink 0.7s steps(40) infinite;
+}
+
+/* Blink animation for the cursor */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+
+/* About Section */
+#about {
+    padding: 50px 0;
+    background-color: #1f1f1f;
+}
+
+#about h2 {
+    color: #00ff99;
+    font-size: 2em;
+    margin-bottom: -10px;
+}
+
+#about h1 {
+    color: #e0e0e0;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+/* Skills Section */
+#skills {
+    padding: 50px 0;
+    background-color: #1f1f1f;
+    text-align: center;
+}
+
+#skills h2 {
+    color: #00ff99;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+/* Container to center and set max-width */
+.skills-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px; /* For some padding on smaller screens */
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+.skill {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.skill:hover {
+    transform: translateY(-10px);
+}
+
+.skill img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.skill h3 {
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.skill-bar {
+    background-color: #333;
+    border-radius: 5px;
+    height: 10px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 100%;
+    border-radius: 5px;
+}
+
+.skill-level.html {
+    width: 90%;
+    background-color: #f06529;
+}
+
+.skill-level.css {
+    width: 85%;
+    background-color: #2965f1;
+}
+
+.skill-level.javascript {
+    width: 75%;
+    background-color: #f0db4f;
+}
+
+.skill-level.python {
+    width: 80%;
+    background-color: #3776ab;
+}
+
+
+/* Projects Section */
+#projects {
+    padding: 50px 0;
+}
+
+#projects h2 {
+    color: #00ff99;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project h3 {
+    color: #00ff99;
+}
+
+.project p {
+    color: #ddd;
+}
+
+.project a {
+    color: #00ff99;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+
+/* Contact Section */
+#contact {
+    padding: 50px 0;
+}
+
+#contact h2 {
+    color: #00ff99;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1f1f1f;
+    color: #fff;
+}
+
+button {
+    padding: 10px;
+    background-color: #00ff99;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #009966;
+}
+
+
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    color: #00ff99;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+/* Responsive Layout for Sections */
+@media (max-width: 768px) {
+    #about, #skills, #projects, #experience, #contact {
+        padding: 30px 0; /* Adjust padding for smaller screens */
     }
 }

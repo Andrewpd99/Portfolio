@@ -24,34 +24,63 @@ header {
     background-color: #1f1f1f;
     padding: 20px 0;
     text-align: center;
-    z-index: 10; /* Ensure header stays on top */
+    top: 0;
+    width: 100%;
+    z-index: 100;
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 100%; /* Allow the container to span the full width */
+    max-width: 100%;
+    height: 100%;
     margin: 0 auto;
-    padding: 0 20px; /* Add padding to create space from the edges */
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    padding: 0 20px;
+    flex-wrap: wrap;
 }
 
 .header-left {
-    flex: 1;
-    text-align: left; /* Align the name to the left */
-    padding-left: 3%; /* Move the name more to the left */
-}
-
-.header-right {
-    text-align: right; /* Align the navigation to the right */
-    padding-right: 3%; /* Move the navigation more to the right */
+    display: flex;
+    align-items: center;
+    text-align: left;
 }
 
 .header-left h1 {
     color: #00ff99;
     margin: 0;
-    font-size: 2em;
+    font-size: 1.5em;
+    margin-right: 20px; /* Add some space between the name and icons */
+}
+
+.icon-links {
+    display: flex;
+    align-items: center;
+}
+
+.icon-link {
+    display: inline-block;
+    margin: 0 7.5px;
+}
+
+.icon-link img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    padding: 0;
+    border-radius: 10%;
+    margin-top: 10px;
+}
+
+.icon-link img:hover {
+    transform: scale(1.1);
+}
+
+/* Header-right styles for the navigation */
+.header-right {
+    text-align: right;
+    padding-right: 3%;
 }
 
 .header-right nav ul {
@@ -72,7 +101,7 @@ header {
 }
 
 .header-right nav ul li a:hover {
-    Color: #e0e0e0;
+    color: #e0e0e0;
 }
 
 /* Hide nav menu by default on smaller screens */
@@ -80,12 +109,13 @@ header {
     display: none;
     flex-direction: column;
     background-color: #1f1f1f;
-    position: absolute;
+    position: absolute; /* Ensure positioning context */
     right: 3%;
     top: 60px;
     width: 200px;
     border-radius: 5px;
     padding: 10px 0;
+    z-index: 1000; /* Set a high z-index value */
 }
 
 #nav-menu li {
@@ -99,7 +129,7 @@ header {
     cursor: pointer;
     font-size: 24px; /* Increase the size of the icon */
     color: #00ff99; /* Set the icon color */
-    padding: 10px; /* Add some padding around the icon */
+    padding: 5px; /* Add some padding around the icon */
     background-color: #1f1f1f; /* Background color to match the header */
     border-radius: 5px; /* Rounded corners for a nicer look */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
@@ -129,9 +159,9 @@ header {
         display: none;
     }
 
-    /* Change text color on hover */
-    #nav-menu.show li:hover a {
+    #nav-menu li:hover {
         color: #e0e0e0;
+        transform: scale(1.1); /* Slightly increase size on hover */
     }
 }
 
@@ -193,49 +223,31 @@ header {
     margin-bottom: -22px; /* Increase the bottom margin */
 }
 
-/* Hero Right Placeholder */
-.hero-right {
-    background-color: #ffffff; /* White background */
-    width: 600px; /* Fixed width on larger screens */
-    height: 350px; /* Fixed height on larger screens */
-    border: 2px solid #cccccc; /* Light border for visibility */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+.contact-info {
+    margin-top: 8px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #333; /* Dark text color */
-    font-size: 24px; /* Text size */
-    text-align: center; /* Center the text */
-    z-index: 1; /* Ensure it's above other elements */
-    position: relative; /* Ensure it's positioned correctly */
+    align-items: center; /* Center vertically */
 }
 
-/* Responsive Styles */
-@media (max-width: 1100px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-container {
-        justify-content: center; /* Center the container items horizontally */
-        align-items: center; /* Center the container items vertically */
-    }
-
-    .hero-left, .hero-right {
-        width: 100%; /* Full width on smaller screens */
-        margin-bottom: 20px; /* Space below each section */
-    }
-
-    .hero-left {
-        order: 1; /* Ensure hero-left comes first */
-    }
-
-    .hero-right {
-        order: 2; /* Ensure hero-right comes second */
-    }
+.contact-info h3 {
+    font-size: 1em;
+    margin-right: 10px; /* Add some space between "My Resume" and the icons */
+    color: #00ff99;
+    border: 2px solid #00ff99; /* Green border */
+    padding: 4px 8px; /* Add padding inside the border */
+    display: inline-block; /* Ensure the border wraps tightly around the text */
+    border-radius: 15px; /* Soften the corners */
+    transition: all 0.3s ease; /* Smooth transition effect */
+    cursor: pointer; /* Change cursor to pointer */
 }
+
+.contact-info h3:hover {
+    color: #e0e0e0; /* Change font color on hover */
+    border-color: #e0e0e0; /* Change border color on hover */
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+
+
 
 #animated-text {
     display: inline-block;
@@ -254,6 +266,24 @@ header {
     animation: blink 0.7s steps(40) infinite;
 }
 
+/* Hero Right Placeholder */
+.hero-right {
+    background-color: #ffffff; /* White background */
+    width: 600px; /* Fixed width on larger screens */
+    height: 350px; /* Fixed height on larger screens */
+    border: 2px solid #cccccc; /* Light border for visibility */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333; /* Dark text color */
+    font-size: 24px; /* Text size */
+    text-align: center; /* Center the text */
+    z-index: 1; /* Ensure it's above other elements */
+    position: relative; /* Ensure it's positioned correctly */
+}
+
 /* Blink animation for the cursor */
 @keyframes blink {
     50% {
@@ -269,6 +299,97 @@ header {
 
 }
 
+
+/* Media Query for screens less than 1100px */
+@media (max-width: 1100px) {
+    .contact-info {
+        justify-content: center; /* Center the entire section horizontally */
+        text-align: center; /* Center text and icons within the section */
+    }
+
+    .contact-info h3 {
+        margin-right: 0; /* Remove the margin to keep it centered */
+        margin-bottom: 12px; /* Add margin below the text to space it from icons */
+    }
+
+    .hero-container {
+        flex-direction: column; /* Stack the left and right sections vertically */
+        align-items: center;
+    }
+
+    .hero-left {
+        text-align: center; /* Center the content inside hero-left */
+        width: 100%;
+    }
+
+    .hero-right {
+        width: 100%;
+    }
+}
+
+/* Modal Styles */
+#resume-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 1000; /* High z-index to be on top */
+}
+
+.modal-content {
+    background-color: #fff; /* White background for the content */
+    border-radius: 8px; /* Rounded corners */
+    padding: 0; /* Remove default padding */
+    width: 100%; /* Responsive width */
+    height: 100%; /* Responsive height */
+    display: flex; /* Flexbox for centering */
+    flex-direction: column; /* Vertical layout */
+    position: relative; /* Relative position for the close button */
+    overflow: hidden; /* Hide overflow */
+}
+
+.modal-content iframe {
+    flex: 1; /* Take up all available space */
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove default border */
+}
+
+.close {
+    position: absolute; /* Absolute position */
+    top: 10px; /* Distance from the top */
+    right: 10px; /* Distance from the right */
+    font-size: 40px; /* Larger close button */
+    cursor: pointer; /* Pointer cursor */
+    color: #fff; /* White color for visibility */
+    width: 40px; /* Fixed width */
+    height: 40px; /* Fixed height */
+    display: flex; /* Flexbox to center the text */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    z-index: 1001; /* Ensure it's on top of the iframe */
+    text-align: center; /* Center text inside */
+    line-height: 1; /* Adjust line height */
+}
+
+/* Mobile Adjustments */
+@media (max-width: 780px) {
+    .modal-content {
+        width: 95vw; /* Increased width for mobile */
+        height: 95vh; /* Increased height for mobile */
+    }
+
+    .close {
+        font-size: 28px; /* Smaller close button on mobile */
+        width: 35px; /* Adjust width */
+        height: 35px; /* Adjust height */
+    }
+}
 
 /* About Section */
 #about {

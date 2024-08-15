@@ -8,7 +8,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
-// Form submission handling
+// Contact form submission handling
 document.querySelector('form').addEventListener('submit', function(e) {
     e.preventDefault();
     alert('Message sent! Thank you for reaching out.');
@@ -21,7 +21,7 @@ document.getElementById('hamburger-menu').addEventListener('click', function() {
     navMenu.classList.toggle('show');
 });
 
-// Close menu when clicking outside of it
+// Close nav menu when clicking outside of it
 document.addEventListener('click', function(e) {
     var navMenu = document.getElementById('nav-menu');
     var hamburgerMenu = document.getElementById('hamburger-menu');
@@ -32,7 +32,7 @@ document.addEventListener('click', function(e) {
 
 // Hero text writer
 document.addEventListener('DOMContentLoaded', function() {
-    const texts = ["Software Engineer", "AI Enthusiast", "Full Stack Developer", "Problem Solver"];
+    const texts = ["Software Engineer", "AI Enthusiast", "Full Stack Developer", "Daily LeetCoder"];
     let count = 0;
     let index = 0;
     let currentText = '';
@@ -75,3 +75,28 @@ document.addEventListener('DOMContentLoaded', function() {
     type(); // Start the typing animation
 });
 
+// Get the modal
+var modal = document.getElementById("resume-modal");
+
+// Get the trigger element
+var trigger = document.getElementById("resume-trigger");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the trigger, open the modal 
+trigger.onclick = function() {
+    modal.style.display = "flex"; // Use flex to align content
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}

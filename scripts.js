@@ -75,13 +75,14 @@ document.addEventListener('DOMContentLoaded', function() {
     type(); // Start the typing animation
 });
 
+// Resume - pdf viewer
 // Get the trigger element
 var trigger = document.getElementById("resume-trigger");
-
 // When the user clicks on the trigger, open the PDF in a new tab
 trigger.onclick = function() {
     window.open('Andrew_Dickey_Software_Engineer_Resume.pdf', '_blank');
 }
+
 
 // Creates the hero 0s/1s animation
 const matrixPopups = document.getElementById('matrix-popups');
@@ -108,4 +109,4 @@ function createPopup() {
 }
 
 // Create popups more frequently
-setInterval(createPopup, 50); // Adjust the interval for more frequent popups
+setInterval(createPopup, 40); // Adjust the interval for more frequent popups

@@ -19,7 +19,6 @@ body {
 }
 
 
-
 /* Header Styles */
 header {
     background-color: #1f1f1f;
@@ -50,35 +49,16 @@ header {
 .header-left h1 {
     color: #00ff99;
     margin: 0;
-    font-size: 1.5em;
-    margin-right: 20px; /* Add some space between the name and icons */
+    font-size: 2em;
+    margin-right: 15px;
+    text-shadow:
+        1px 1px 0 #121212,
+       -1px 1px 0 #121212,
+        1px -1px 0 #121212,
+       -1px -1px 0 #121212;
 }
 
-.icon-links {
-    display: flex;
-    align-items: center;
-}
 
-.icon-link {
-    display: inline-block;
-    margin: 0 7.5px;
-}
-
-.icon-link img {
-    width: 30px;
-    height: 30px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-    padding: 0;
-    border-radius: 10%;
-    margin-top: 10px;
-}
-
-.icon-link img:hover {
-    transform: scale(1.1);
-}
-
-/* Header-right styles for the navigation */
 .header-right {
     text-align: right;
     padding-right: 3%;
@@ -110,13 +90,13 @@ header {
     display: none;
     flex-direction: column;
     background-color: #1f1f1f;
-    position: absolute; /* Ensure positioning context */
+    position: absolute;
     right: 3%;
     top: 60px;
     width: 200px;
-    border-radius: 5px;
+    border-radius: 20px;
     padding: 10px 0;
-    z-index: 1000; /* Set a high z-index value */
+    z-index: 1000; 
 }
 
 #nav-menu li {
@@ -124,25 +104,23 @@ header {
     margin: 10px 0;
 }
 
-/* Hamburger Menu Styling */
 .hamburger-menu {
     display: none;
     cursor: pointer;
-    font-size: 24px; /* Increase the size of the icon */
-    color: #00ff99; /* Set the icon color */
-    padding: 5px; /* Add some padding around the icon */
-    background-color: #1f1f1f; /* Background color to match the header */
-    border-radius: 5px; /* Rounded corners for a nicer look */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+    font-size: 24px;
+    color: #00ff99;
+    padding: 5px;
+    background-color: #1f1f1f;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .hamburger-menu:hover {
-    background-color: #333; /* Slightly darker background on hover */
-    color: #fff; /* Change icon color on hover */
+    background-color: #333;
+    color: #fff;
 }
 
-/* Mobile Adjustments */
-@media (max-width: 780px) {
+@media (max-width: 860px) {
     .hamburger-menu {
         display: block;
         margin: -5px 0px;
@@ -155,41 +133,41 @@ header {
 
     }
 
-    /* Ensure that the regular horizontal nav is hidden on smaller screens */
+    /* Nav is hidden on smaller screens */
     #nav-menu {
         display: none;
     }
 
     #nav-menu li:hover {
         color: #e0e0e0;
-        transform: scale(1.1); /* Slightly increase size on hover */
+        transform: scale(1.1);
     }
 }
 
-/* Regular header for larger screens */
-@media (min-width: 781px) {
+@media (min-width: 861px) {
     #nav-menu {
-        display: flex; /* Regular horizontal menu on larger screens */
-        position: static; /* Reset position */
-        width: auto; /* Reset width */
-        background-color: transparent; /* No background on larger screens */
-        padding: 0; /* Reset padding */
-        flex-direction: row; /* Horizontal layout */
+        display: flex;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        padding: 0;
+        flex-direction: row;
     }
 
     #nav-menu li {
-        margin: 0 15px; /* Regular margin between items */
+        margin: 0 15px;
     }
 
     .hamburger-menu {
-        display: none; /* Hide hamburger menu on larger screens */
+        display: none;
     }
 }
+
 
 /* Hero Section Styles */
 .hero {
     background: linear-gradient(135deg, rgba(31, 31, 31, 0.7), rgba(0, 0, 0, 0.7)), 
-                url('Pictures/Background_Image.avif'); /* Replace with your image URL */
+                url('Pictures/Background_Image.avif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -200,7 +178,7 @@ header {
     flex-wrap: wrap;
     text-align: left;
     position: relative;
-    overflow: hidden; /* Ensures the stars stay within the hero section */
+    overflow: hidden;
 }
 
 #matrix-popups {
@@ -221,7 +199,7 @@ header {
     font-size: 40px;
     white-space: nowrap;
     opacity: 0;
-    animation: pop 2s forwards; /* Increased duration for slower fade */
+    animation: pop 2s forwards; 
 }
 
 @keyframes pop {
@@ -231,7 +209,7 @@ header {
     }
     100% {
         transform: scale(1);
-        opacity: 0; /* Adjust the end opacity to control the fade-out effect */
+        opacity: 0;
     }
 }
 
@@ -240,90 +218,110 @@ header {
     display: flex;
     justify-content: flex-start;
     margin-left: 5%;
-    align-items: center; /* Center items vertically */
+    align-items: center;
     max-width: 1100px;
     margin: 5% auto;
-    padding: 0 40px; /* Add padding to create space from the edges */
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    position: relative; /* Position relative for the container */
+    padding: 0 40px;
+    flex-wrap: wrap;
+    position: relative;
 }
 
-/* Default layout (larger screens) */
 .hero-left {
-    flex: 1; /* Take up available space */
-    margin-right: 20px; /* Space between hero-left and hero-right */
+    flex: 1;
+    margin-right: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    margin-left: -5%; /* Adjust margin to move it left */
+    justify-content: center;
+    margin-left: -5%;
 }
 
 .hero-left h2 {
     font-size: 1.75em;
-    margin-bottom: -22px; /* Increase the bottom margin */
+    margin-bottom: -22px;
 }
-
-.contact-info {
-    margin-top: 8px;
-    display: flex;
-    align-items: center; /* Center vertically */
-}
-
-.contact-info h3 {
-    font-size: 1em;
-    margin-right: 10px; /* Add some space between "My Resume" and the icons */
-    color: #00ff99;
-    border: 2px solid #00ff99; /* Green border */
-    padding: 4px 8px; /* Add padding inside the border */
-    display: inline-block; /* Ensure the border wraps tightly around the text */
-    border-radius: 15px; /* Soften the corners */
-    transition: all 0.3s ease; /* Smooth transition effect */
-    cursor: pointer; /* Change cursor to pointer */
-}
-
-.contact-info h3:hover {
-    color: #e0e0e0; /* Change font color on hover */
-    border-color: #e0e0e0; /* Change border color on hover */
-    transform: scale(1.1); /* Slightly enlarge the button on hover */
-}
-
-
 
 #animated-text {
     display: inline-block;
     font-family: Arial, sans-serif;
     color: #e0e0e0;
     font-size: 20px;
-    margin-top: 10px; /* Add some top margin */
+    margin-top: 10px;
 }
 
 #animated-text .highlight {
-    font-size: 24px; /* Bigger font size for changing text */
-    color: #00ff99; /* Text color #00ff99 for changing text */
+    font-size: 24px;
+    color: #00ff99;
     font-family: Arial, sans-serif;
-    border-right: 2px solid #00ff99; /* Create the blinking cursor */
-    padding-right: 2px; /* Adjust spacing for the cursor */
+    border-right: 2px solid #00ff99;
+    padding-right: 2px;
     animation: blink 0.7s steps(40) infinite;
 }
 
+.contact-info {
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info h3 {
+    font-size: 1em;
+    color: #00ff99;
+    border: 2px solid #00ff99;
+    padding: 4px 8px;
+    display: inline-block;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.contact-info h3:hover {
+    color: #e0e0e0;
+    border-color: #e0e0e0;
+    transform: scale(1.1);
+}
+
+.icon-links {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.icon-link {
+    display: inline-block;
+    margin: 0px 7.5px;
+}
+
+.icon-link img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border-radius: 10%;
+}
+
+.icon-link img:hover {
+    transform: scale(1.1);
+}
+
 .hero-right {
-    width: 350px; /* Set width to a fixed value */
-    height: 350px; /* Set height to the same value as width for a circle */
-    border-radius: 50%; /* Make the container round */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1; /* Ensure it's above other elements */
-    position: relative; /* Ensure it's positioned correctly */
-    overflow: hidden; /* Hide any overflow from the image */
-    margin-left: -5%; /* Adjust margin to move it left */
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    margin-left: -5%;
 }
 
 .hero-image {
-    width: 100%; /* Ensure the image covers the container width */
-    height: 100%; /* Ensure the image covers the container height */
-    object-fit: cover; /* Ensure the image covers the container without stretching */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Blink animation for the cursor */
@@ -333,40 +331,30 @@ header {
     }
 }
 
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
+@media (max-width: 1100px) {
+    .contact-info {
+        margin-top: -1px;
+        margin-bottom: 12px;
+        justify-content: center;
         text-align: center;
     }
 
-}
-
-
-/* Media Query for screens less than 1100px */
-@media (max-width: 1100px) {
-    .contact-info {
-        justify-content: center; /* Center the entire section horizontally */
-        text-align: center; /* Center text and icons within the section */
-    }
-
-    .contact-info h3 {
-        margin-right: 0; /* Remove the margin to keep it centered */
-        margin-bottom: 12px; /* Add margin below the text to space it from icons */
-    }
-
     .hero-container {
-        flex-direction: column; /* Stack the left and right sections vertically */
+        flex-direction: column;
         align-items: center;
     }
 
     .hero-left {
-        text-align: center; /* Center the content inside hero-left */
+        text-align: center;
         width: 100%;
+    }
+    
+    .icon-links {
+        justify-content: center;
+        text-align: center;
     }
 
-    .hero-right {
-        width: 100%;
-    }
+
 }
 
 
@@ -401,11 +389,10 @@ header {
     margin-bottom: 40px;
 }
 
-/* Container to center and set max-width */
 .skills-container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 20px; /* For some padding on smaller screens */
+    padding: 0 20px;
 }
 
 .skills-grid {
@@ -568,10 +555,9 @@ footer {
     margin-top: 50px;
 }
 
-/* Responsive Layout for Sections */
 @media (max-width: 768px) {
     #about, #skills, #projects, #experience, #contact {
-        padding: 30px 0; /* Adjust padding for smaller screens */
+        padding: 30px 0;
     }
 }
 

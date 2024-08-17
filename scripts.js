@@ -75,28 +75,10 @@ document.addEventListener('DOMContentLoaded', function() {
     type(); // Start the typing animation
 });
 
-// Get the modal
-var modal = document.getElementById("resume-modal");
-
 // Get the trigger element
 var trigger = document.getElementById("resume-trigger");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the trigger, open the modal 
+// When the user clicks on the trigger, open the PDF in a new tab
 trigger.onclick = function() {
-    modal.style.display = "flex"; // Use flex to align content
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+    window.open('Andrew_Dickey_Software_Engineer_Resume.pdf', '_blank');
 }

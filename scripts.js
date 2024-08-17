@@ -32,7 +32,7 @@ document.addEventListener('click', function(e) {
 
 // Hero text writer
 document.addEventListener('DOMContentLoaded', function() {
-    const texts = ["Software Engineer", "AI Enthusiast", "Full Stack Developer", "Daily LeetCoder"];
+    const texts = ["Software Engineer","Python Developer", "AI Enthusiast", "Full Stack Developer"];
     let count = 0;
     let index = 0;
     let currentText = '';
@@ -82,3 +82,30 @@ var trigger = document.getElementById("resume-trigger");
 trigger.onclick = function() {
     window.open('Andrew_Dickey_Software_Engineer_Resume.pdf', '_blank');
 }
+
+// Creates the hero 0s/1s animation
+const matrixPopups = document.getElementById('matrix-popups');
+
+function createPopup() {
+    const popup = document.createElement('div');
+    popup.className = 'matrix-popup';
+    popup.textContent = Math.random() > 0.5 ? '1' : '0';
+    
+    // Randomize the position within the viewport
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * window.innerHeight;
+    
+    popup.style.left = `${x}px`;
+    popup.style.top = `${y}px`;
+    
+    // Append the popup to the container
+    matrixPopups.appendChild(popup);
+    
+    // Remove the popup after animation is complete
+    popup.addEventListener('animationend', () => {
+        matrixPopups.removeChild(popup);
+    });
+}
+
+// Create popups more frequently
+setInterval(createPopup, 50); // Adjust the interval for more frequent popups

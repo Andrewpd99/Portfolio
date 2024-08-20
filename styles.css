@@ -41,15 +41,25 @@ header {
 }
 
 .header-left {
+    margin-left: 1%;
     display: flex;
     align-items: center;
     text-align: left;
 }
 
+.header-left .profile-picture {
+    border-radius: 50%;
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Maintain aspect ratio */
+    object-fit: cover;
+    object-position: center top; /* Shifts the image towards the top */
+    margin-right: 15px;
+}
+
 .header-left h1 {
     color: #00ff99;
     margin: 0;
-    font-size: 2em;
+    font-size: 1.25em;
     margin-right: 15px;
     text-shadow:
         1px 1px 0 #121212,
@@ -71,14 +81,12 @@ header {
     padding: 0;
 }
 
-.header-right nav ul li {
-    margin: 0 15px;
-}
 
 .header-right nav ul li a {
     color: #00ff99;
     text-decoration: none;
     font-weight: bold;
+    margin: 0 5px;
 }
 
 .header-right nav ul li a:hover {
@@ -307,8 +315,6 @@ header {
 .hero-right {
     width: 350px;
     height: 350px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -362,6 +368,14 @@ header {
 #about {
     padding: 50px 0;
     background-color: #1f1f1f;
+    display: flex;
+    justify-content: center;
+}
+
+#about .container {
+    max-width: 800px; /* Adjust the max-width as needed */
+    margin: 0 auto;
+    padding: 0 20px; /* Optional: Add some padding for smaller screens */
 }
 
 #about h2 {
@@ -375,6 +389,13 @@ header {
     font-size: 1em;
     margin-bottom: 10px;
 }
+
+#about p {
+    color: #e0e0e0;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
 
 /* Skills Section */
 #skills {
@@ -462,47 +483,87 @@ header {
 
 /* Projects Section */
 #projects {
-    padding: 50px 0;
+    padding: 50px;
 }
 
 #projects h2 {
     color: #00ff99;
     font-size: 2em;
     margin-bottom: 20px;
+    text-align: center;
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .project {
+    display: flex;
     background-color: #1f1f1f;
-    padding: 20px;
     border-radius: 10px;
-    text-align: center;
+    padding: 40px;
     transition: transform 0.3s ease;
+    height: 350px; /* Adjust height for a larger rectangle */
 }
 
 .project:hover {
     transform: scale(1.05);
 }
 
-.project h3 {
-    color: #00ff99;
+.project-left {
+    background-color: #333; /* Placeholder color for the square */
+    width: 350px; /* Square size */
+    height: 350px; /* Square size */
+    margin-right: 30px; /* Space between square and text */
 }
 
-.project p {
+.project-right {
+    flex: 1;
+}
+
+.project-right h3 {
+    color: #00ff99;
+    margin-bottom: 10px;
+    font-size: 1.5em; /* Adjust font size for larger text */
+}
+
+.project-right p {
     color: #ddd;
+    font-size: 1.1em; /* Adjust font size for larger text */
 }
 
-.project a {
-    color: #00ff99;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 10px;
-    display: inline-block;
+/* Media query for small screens */
+@media (max-width: 1000px) {
+    .project {
+        flex-direction: column;
+        height: auto; /* Allow height to adjust based on content */
+        padding: 20px;
+        width: 90%; /* Adjust width to take up most of the screen */
+        max-width: 400px; /* Set a maximum width */
+        margin: 0 auto; /* Center the project container */
+    }
+
+    .project-left {
+        margin-right: 0;
+        margin-bottom: 20px; /* Add space between the image and text */
+        width: 300px; /* Fixed width */
+        height: 300px; /* Fixed height */
+        align-self: center; /* Center the image on smaller screens */
+    }
+    
+    .project-right {
+        width: 100%; /* Allow the text to take full width below the image */
+        align-self: center; /* Center the text on smaller screens */
+        text-align: center; /* Center the text within the box */
+    }
+
+    .project-right h3, .project-right p {
+        margin: 0;
+        padding: 0 10px;
+        font-size: 1em; /* Adjust font size for smaller screens */
+    }
 }
 
 

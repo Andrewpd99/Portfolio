@@ -9,11 +9,25 @@ document.querySelectorAll('nav a').forEach(anchor => {
 });
 
 // Contact form submission handling
-document.querySelector('form').addEventListener('submit', function(e) {
+document.querySelector('#contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    alert('Message sent! Thank you for reaching out.');
-    this.reset();
+    
+    // Collect form data
+    const name = encodeURIComponent(document.querySelector('#name').value);
+    const email = encodeURIComponent(document.querySelector('#email').value);
+    const message = encodeURIComponent(document.querySelector('#message').value);
+
+    // Set the email recipient
+    const recipient = 'Andrewpd99@hotmail.com'; 
+
+    // Create the mailto link
+    const mailtoLink = `mailto:${recipient}?subject=Messaged From Portfolio&body=${message}%0A%0AKind Regards,%0A${name}`;
+
+    // Open the default email client
+    window.location.href = mailtoLink;
 });
+
+
 
 // Header Menu list when clicked
 document.getElementById('hamburger-menu').addEventListener('click', function() {
@@ -32,7 +46,7 @@ document.addEventListener('click', function(e) {
 
 // Hero text writer
 document.addEventListener('DOMContentLoaded', function() {
-    const texts = ["Software Engineer","Python Developer", "AI Enthusiast", "Full Stack Developer"];
+    const texts = ["Software Engineer","Python Developer", "AI Enthusiast", "Full Stack Developer", "Data Engineer"];
     let count = 0;
     let index = 0;
     let currentText = '';
